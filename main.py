@@ -31,7 +31,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# === Karar Ağacı Eğitimi ===
+# Karar Ağacı Eğitimi
 start_dt = time.time()
 dt = DecisionTreeClassifier(random_state=42)
 dt.fit(X_train, y_train)
@@ -39,7 +39,7 @@ end_dt = time.time()
 dt_duration = end_dt - start_dt
 y_pred_dt = dt.predict(X_test)
 
-# === Yapay Sinir Ağı Eğitimi ===
+# Yapay Sinir Ağı Eğitimi
 start_mlp = time.time()
 mlp = MLPClassifier(hidden_layer_sizes=(100,), max_iter=300, random_state=42)
 mlp.fit(X_train_scaled, y_train)
@@ -55,7 +55,7 @@ print(classification_report(y_test, y_pred_mlp))
 
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
-# === Eğitim Sürelerini Yazdır ===
+# Eğitim Sürelerini Yazdır 
 print(f"Karar Ağacı eğitim süresi: {dt_duration:.4f} saniye")
 print(f"Yapay Sinir Ağı eğitim süresi: {mlp_duration:.4f} saniye")
 
