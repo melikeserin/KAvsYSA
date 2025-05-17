@@ -56,7 +56,7 @@ print(classification_report(y_test, y_pred_mlp))
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
 # Eğitim Sürelerini Yazdır 
-print(f"Karar Ağaci eğitim süresi: {dt_duration:.4f} saniye")
+print(f"Karar Ağacı eğitim süresi: {dt_duration:.4f} saniye")
 print(f"Yapay Sinir Ağı eğitim süresi: {mlp_duration:.4f} saniye")
 
 # Karar Ağacı karışıklık matrisi
